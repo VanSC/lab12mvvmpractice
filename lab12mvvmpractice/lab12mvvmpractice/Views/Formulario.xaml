@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab12mvvmpractice.Views.Formulario">
+    <StackLayout Padding="60">
+        <Label Text="Laboratorio 12" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+        <Label Text="Titulo" FontSize="Subtitle"/>
+        <Entry Placeholder="entry titulo" Text="{Binding Titulo}"></Entry>
+        <Label Text="Desc" FontSize="Subtitle" ></Label>
+        <Entry Placeholder="entry desc" Text="{Binding Descripcion}"></Entry>
+        <Label Text="Stado" FontSize="Subtitle"></Label>
+        <Entry Placeholder="entry status" Text="{Binding Status}"></Entry>
+        <Button Text="Guardar" FontAttributes="Bold" Command="{Binding Guardar}"></Button>
+        <Button Text="Listar" FontAttributes="Bold" Command="{Binding Listar}"></Button>
+        <ListView></ListView>
+    </StackLayout>
+</ContentPage>
