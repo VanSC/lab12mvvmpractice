@@ -4,14 +4,28 @@
              x:Class="lab12mvvmpractice.Views.Formulario">
     <StackLayout Padding="60">
         <Label Text="Laboratorio 12" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-        <Label Text="Titulo" FontSize="Subtitle"/>
+        <Label Text="Titulo:" FontSize="Subtitle" FontAttributes="Bold"/>
         <Entry Placeholder="entry titulo" Text="{Binding Titulo}"></Entry>
-        <Label Text="Desc" FontSize="Subtitle" ></Label>
-        <Entry Placeholder="entry desc" Text="{Binding Descripcion}"></Entry>
-        <Label Text="Stado" FontSize="Subtitle"></Label>
-        <Entry Placeholder="entry status" Text="{Binding Status}"></Entry>
-        <Button Text="Guardar" FontAttributes="Bold" Command="{Binding Guardar}"></Button>
-        <Button Text="Listar" FontAttributes="Bold" Command="{Binding Listar}"></Button>
-        <ListView></ListView>
+        <Label Text="Descripcion:" FontSize="Subtitle" FontAttributes="Bold" ></Label>
+        <Entry Placeholder="entry dsc" Text="{Binding Descripcion}"></Entry>
+        <Label Text="Stado" FontSize="Subtitle" FontAttributes="Bold"></Label>
+        <Entry Placeholder="entry Status:" Text="{Binding Status}"></Entry>
+        <Button Text="Guardar" FontAttributes="Bold" BackgroundColor="Purple" TextColor="White" Command="{Binding Guardar}"></Button>
+        <Button Text="Listar" FontAttributes="Bold" BackgroundColor="CadetBlue" Command="{Binding Listar}"></Button>
+        <ListView ItemsSource="{Binding Tasks}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding titulo}" TextColor="Black" FontSize="Subtitle"></Label>
+                                <Label Text="{Binding descripcion}" TextColor="Black" FontSize="Caption"></Label>
+                                <Label Text="{Binding status}" TextColor="Black" FontSize="Caption"></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>
